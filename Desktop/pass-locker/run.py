@@ -28,3 +28,9 @@ def find_credentials_by_number(number):
     Function that finds credentials by number and returns the credentials
     '''
     return Credentials.find_by_number(number)
+
+def check_existing_credentials(number):
+    '''
+    Function that check if user's credentials exists with that number and return a Boolean
+    '''
+    return Credentials.credentials_exist(number)
