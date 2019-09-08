@@ -29,7 +29,6 @@ class TestUserInputs(unittest.TestCase):
         self.new_user_inputs.save_inputs() # saving the new inputs
         self.assertEqual(len(User.user_inputs_list),1)
 
-
     
 
 

@@ -54,16 +54,42 @@ class TestUserCredentials(unittest.TestCase):
          self.assertEqual(len( Credentials.credentials_inputs_list),1)
 
         
-    def test_display_credentials(self):
+     def test_display_credentials(self):
         '''
         this method will return a list of all credentials saved
         '''
 
-        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_inputs_list)
+        self.assertEqual(Credentials.display_credentials(self),Credentials.credentials_inputs_list)
 
 
     
+     def test_find_credentials_by_number(self):
+         
+         """
+         this will check if we can find credentials by phone number and display information
 
+         """
+         self.new_user_credentials.save_credentials()
+         test_crendentials = Credentials("user","test@user.com","0788456789")
+         test_crendentials.save_credentials()
+
+         found_credentials = Credentials.number("0788456789")
+
+         self.assertEqual(found_credentials.email,test_crendentials.email)
+
+     def test_credentials_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the credentials.
+        '''
+
+        self.new_user_credentials.save_credentials()
+        test_crendentials = Credentials("user","test@user.com","0788456789") 
+        test_crendentials.save_credentials()
+
+        credentials_exists = Credentials.credentials_exist("0788456789")
+
+        self.assertTrue(credentials_exists)
+  
         
         
 

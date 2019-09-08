@@ -1,3 +1,6 @@
+import pyperclip
+
+
 class Credentials:
     """
     class that genenarates new instances for  user- credentials_inputs
@@ -35,9 +38,35 @@ class Credentials:
         self.credentials_inputs_list
 
 
-   
-   
-  
+    def find_credentials_by_number(cls,number):
+        '''
+        Method that takes in a number and returns credentials that matches that number.
+
+        Args:
+            number: Phone number to search for
+        Returns :
+            Credentials of person that matches the number.
+        '''
+
+        for credentials in cls. credentials_inputs_list:
+            if credentials.number == number:
+                return credentials
+
+    def credentials_exist(cls,number):
+        '''
+        Method that checks if a credentials exists from the credentials list.
+        Args:
+            number: Phone number to search if it exists
+        Returns :
+            Boolean: True or false depending if the credentials exists
+        '''
+       
+        for credentials in cls. credentials_inputs_list:
+            if credentials.number == number:
+                return credentials
+
+        return False
+
     
 
    
