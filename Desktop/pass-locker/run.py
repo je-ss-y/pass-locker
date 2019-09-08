@@ -10,8 +10,8 @@ def create_contact(fname,lname,number,email):
     new_contact = Contact(fname,lname,number,email)
     return new_contact
 
-def save_contacts(contact):
+def save_credentials(credentials):
     '''
-    Function to save  user's contact
+    Function to save  user's credentials
     '''
-    contact.save_contact()
+    Credentials.save_credentials()
