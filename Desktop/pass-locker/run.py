@@ -14,4 +14,10 @@ def save_credentials(credentials):
     '''
     Function to save  user's credentials
     '''
-    Credentials.save_credentials()
+    credentials.save_credentials()
+
+ def delete_credentials(credentials):
+    '''
+    Function to delete user's credentials
+    '''
+    credentials.delete_credentials()
