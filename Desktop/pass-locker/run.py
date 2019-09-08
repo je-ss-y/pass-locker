@@ -34,3 +34,9 @@ def check_existing_credentials(number):
     Function that check if user's credentials exists with that number and return a Boolean
     '''
     return Credentials.credentials_exist(number)
+
+def display_credentials():
+    '''
+    Function that returns all the saved credentials
+    '''
+    return Credentials.display_credentials()
