@@ -73,7 +73,7 @@ class TestUserCredentials(unittest.TestCase):
          test_crendentials = Credentials("user","test@user.com","0788456789")
          test_crendentials.save_credentials()
 
-         found_credentials = Credentials.number("0788456789")
+         found_credentials = Credentials.find_by_number("0788456789")
 
          self.assertEqual(found_credentials.email,test_crendentials.email)
 

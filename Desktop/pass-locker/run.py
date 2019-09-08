@@ -16,8 +16,15 @@ def save_credentials(credentials):
     '''
     credentials.save_credentials()
 
- def delete_credentials(credentials):
+def delete_credentials(credentials):
     '''
     Function to delete user's credentials
     '''
     credentials.delete_credentials()
+
+
+def find_credentials_by_number(number):
+    '''
+    Function that finds credentials by number and returns the credentials
+    '''
+    return Credentials.find_by_number(number)
