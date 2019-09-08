@@ -9,3 +9,9 @@ def create_contact(fname,lname,number,email):
     '''
     new_contact = Contact(fname,lname,number,email)
     return new_contact
+
+def save_contacts(contact):
+    '''
+    Function to save  user's contact
+    '''
+    contact.save_contact()
