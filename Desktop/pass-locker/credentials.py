@@ -51,7 +51,7 @@ class Credentials:
         for credentials in cls. credentials_inputs_list:
             if credentials.number == number:
                 return credentials
-
+    @classmethod
     def credentials_exist(cls,number):
         '''
         Method that checks if a credentials exists from the credentials list.
