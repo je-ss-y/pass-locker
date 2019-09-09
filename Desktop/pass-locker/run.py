@@ -35,7 +35,7 @@ def check_existing_credentials(number):
     '''
     return Credentials.credentials_exist(number)
 
-def display_credentials():
+def display_credentials(self):
     '''
     Function that returns all the saved credentials
     '''
@@ -60,11 +60,8 @@ def main():
                         print("New Contact")
                         print("-"*10)
 
-                        print ("First name ....")
-                        f_name = input()
-
-                        print("Last name ...")
-                        l_name = input()
+                        print ("User_name ....")
+                        User_name = input()
 
                         print("Phone number ...")
                         p_number = input()
@@ -72,10 +69,13 @@ def main():
                         print("Email address ...")
                         e_address = input()
 
+                        print("password ...")
+                        password= input()
 
-                        save_contacts(create_contact(f_name,l_name,p_number,e_address)) # create and save new credentials.
+
+                        save_contacts(create_contact(User_name,password,p_number,e_address)) # create and save new credentials.
                         print ('\n')
-                        print(f"New Contact {f_name} {l_name} created")
+                        print(f"New Contact {User_name} created")
                         print ('\n')
 
                 elif short_code == 'dc':
@@ -85,7 +85,7 @@ def main():
                                 print('\n')
 
                                 for credentials in display_credentials():
-                                        print(f"{credentials.first_name} {credentials.last_name} .....{credentials.phone_number}")
+                                        print(f"Username:{credentials.first_name}/n Password:{credentials.last_name} /n Phone_number{credentials.phone_number}")
 
                                 print('\n')
                         else:
